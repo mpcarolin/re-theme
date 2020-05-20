@@ -66,8 +66,9 @@
       "<rootDir>/src/**/__tests__/**/*.js?(x)"
     ],
     "collectCoverageFrom": [
-      "<rootDir>/src/index.js"
+      "src/**/*.{js,jsx,ts,tsx}"
     ],
+    "coverageDirectory": "coverage",
     "moduleFileExtensions": [
       "js",
       "json",
