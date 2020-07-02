@@ -9,21 +9,30 @@ const runCmd = async (cmd) => {
     const output = await cmdExec(cmd)
     return output
   }
-  catch(e){
-    console.log(e.stack)
+  catch(err){
+    console.error(err.stack)
   }
 
 }
 
+// Not being used at the moment, but it keeping incase we need it in the future
 export default function buildHook(platform){
   return {
     name: 'buildHook',
     buildEnd: async () => {
-      if(!process.env.DOC_APP_PATH || platform === 'native') return
+      return
 
-      const hookFile = path.join(process.env.DOC_APP_PATH, 'retheme-hook.js')
-      await runCmd(`rm -rf ${ hookFile }`)
-      await runCmd(`echo "export {}" > ${ hookFile }`)
+      try {
+
+        // if(!process.env.DOC_APP_PATH || platform === 'native') return
+        // const hookFile = path.join(process.env.DOC_APP_PATH, 'src/retheme-hook.js')
+        // await runCmd(`rm -rf ${ hookFile }`)
+        // await runCmd(`echo "import '../node_modules/@simpleviewinc/re-theme/build/cjs'\n\nconst time=new Date()\n export { time }" > ${ hookFile }`)
+
+      }
+      catch(err){
+        console.error(err.stack)
+      }
 
     }
   }

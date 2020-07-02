@@ -13,7 +13,7 @@ const shared = platform => ({
     clearScreen: false
   },
   plugins: [
-    buildHook(platform),
+    // buildHook(platform),
     replace({
       "process.env.NODE_ENV": JSON.stringify('production')
     }),
