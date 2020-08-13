@@ -74,7 +74,7 @@
     "rollup-plugin-terser": "5.1.2"
   },
   "peerDependencies": {
-    "jsutils": "^git+https://github.com/lancetipton/jsutils.git#v3.2.1",
+    "@ltipton/jsutils": "^git+https://github.com/lancetipton/jsutils.git#v3.2.1",
     "react": "^16.9.0"
   },
   "jest": {
